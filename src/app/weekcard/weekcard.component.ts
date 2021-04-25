@@ -20,28 +20,31 @@ export class WeekcardComponent implements OnInit {
   ngOnInit(): void {
     let labels = ["Sleep", "Play", "Extracurricular", "Academics"]
 
-
     let monday_tasks = new Map([
       [2, new BookedTask(2,1,"Sleep",labels[0])],
       [5, new BookedTask(5,2,"English",labels[3])]
     ]);
 
     let tuesday_tasks = new Map([
+      [2, new BookedTask(2,1,"Sleep",labels[0])],
       [5, new BookedTask(5,1,"Science",labels[3])],
       [10, new BookedTask(10,2,"Maths",labels[3])]
     ]);
 
     let wednesday_tasks = new Map([
+      [2, new BookedTask(2,1,"Sleep",labels[0])],
       [8, new BookedTask(8,1,"Math II",labels[3])],
       [14, new BookedTask(14,2,"Math Club",labels[2])]
     ]);
 
     let thursday_tasks = new Map([
+      [2, new BookedTask(2,1,"Sleep",labels[0])],
       [10, new BookedTask(10,1,"Gov",labels[2])],
       [9, new BookedTask(9,2,"Odessey of the Mind",labels[2])]
     ]);
 
     let friday_tasks = new Map([
+      [2, new BookedTask(2,1,"Sleep",labels[0])],
       [6, new BookedTask(6,1,"Eco",labels[3])],
       [10, new BookedTask(16,2,"Math Club",labels[3])],
       [16, new BookedTask(16,2,"Math Club",labels[1])]
@@ -55,6 +58,11 @@ export class WeekcardComponent implements OnInit {
       [4, friday_tasks]
     ])
 
+    // this.setDataInLocalStorage();
   }
+
+  // setDataInLocalStorage(): void {
+  //   localStorage.setItem('weekly_booked_tasks', this.weekly_booked_tasks); //Set Global Variable
+  // }
 
 }

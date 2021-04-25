@@ -8,14 +8,22 @@ import {ChartDataAndAttributes } from '../models/daytasks'
 })
 export class AnalysisComponent implements OnInit {
   @Input() weekly_booked_tasks: any;
+  weekly_booked_tasks_new: any;
 
   public chart_info: ChartDataAndAttributes = new ChartDataAndAttributes(); 
 
   constructor() { }
 
+  // getDataFromLocalStorage(): any {
+  //   var retval:any = localStorage.getItem('weekly_booked_tasks')
+  //   return JSON.parse(retval); //Get Global Variable Value
+  // }
+
   ngOnInit(): void {
     let task_type_labels = ["Sleep", "Play", "Extracurricular", "Academics"];
     let task_duration_data = [0,0,0,0];
+
+    // this.weekly_booked_tasks_new = this.getDataFromLocalStorage();
 
     for (let daily_booked_tasks of this.weekly_booked_tasks.entries()) {
       console.log(daily_booked_tasks[0], daily_booked_tasks[1]);  
@@ -36,7 +44,7 @@ export class AnalysisComponent implements OnInit {
     };
     this.chart_info.barChartType = 'bar'; //'horizontalBar';
     this.chart_info.barChartLegend = true;
-    this.chart_info.barChartData = [{ data: task_duration_data, label: "Total Activity Per Task Type"}];
+    this.chart_info.barChartData = [{ data: task_duration_data, label: "Total Activity"}];
     this.chart_info.barChartLabels = task_type_labels;
     this.chart_info.barChartColors = [
                                       {
