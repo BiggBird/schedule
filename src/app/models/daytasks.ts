@@ -4,11 +4,24 @@ export class BookedTask {
     name: string;
     type?: string;
 
-    constructor() {
-        this.start = 0;
-        this.duration = 1;
-        this.name = "Peer Tutoring";
-        this.type = "Tutor";
+    constructor(start:number, duration:number, name:string, type:string) {
+        this.start = start;
+        this.duration = duration;
+        this.name = name;
+        this.type = type;
     }
 
 }
+
+
+export class ChartDataAndAttributes {
+    public barChartOptions: any;
+    public barChartLabels: any;
+    public barChartType: any;
+    public barChartLegend: any;
+    public barChartData: any;
+    public barChartColors: any;
+  
+    constructor() { }
+  }
+  

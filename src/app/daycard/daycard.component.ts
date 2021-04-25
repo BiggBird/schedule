@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { BookedTask } from '../models/daytasks';
 
 @Component({
@@ -7,31 +7,34 @@ import { BookedTask } from '../models/daytasks';
   styleUrls: ['./daycard.component.css']
 })
 export class DaycardComponent implements OnInit {
+  @Input() day_of_week: any;
+  @Input() idx: any; //timeindex: any;
+  @Input() weekly_booked_tasks: any;
 
-  booked_tasks: any;
-  day_of_week: string =  "Monday";
+  booked_tasks: any = null;
+  days_of_week_names: string[] = ["Monday", "Tuesday", "Wednesday", "thursday", "Friday", "Saturday"] 
   
   time_intervals = Array.from({length: 24}, (v, k) => k%12);
-  booked_task:BookedTask  = new BookedTask();
+  task_type_labels = ["Sleep", "Play", "Extracurricular", "Academics"];
+  booked_task:BookedTask  = new BookedTask(1,1,"Peer Tutoring", this.task_type_labels[2]);
 
   constructor() { }
 
   ngOnInit(): void {
-    this.booked_tasks = new Map([
-      [0, {
-        "start": 0,
-        "duration": 1,
-        "name": "Sleep Time zzzZ",
-        "type": "Sleep"
-      }],
-      [8, {
-        "start": 8,
-        "duration": 2,
-        "name": "Maths",
-        "type": "Class"
-      }]
-    ]);
+    let labels = ["Sleep", "Play", "Extracurricular", "Academics"]
 
+    // this.booked_tasks = this.weekly_booked_tasks[this.day_of_week];
+    // console.log(this.day_of_week)
+    // console.log(this.weekly_booked_tasks)
+    // console.log(this.weekly_booked_tasks.get(this.day_of_week))
+    if (this.weekly_booked_tasks.get(this.day_of_week) == null) {
+      this.weekly_booked_tasks.set(this.day_of_week, new Map([
+        [0, new BookedTask(0,1,"Sleep",this.task_type_labels[0])],
+        [8, new BookedTask(8,2,"Maths",this.task_type_labels[1])]
+      ]));
+    }
+    this.booked_tasks = this.weekly_booked_tasks.get(this.day_of_week);
+    // console.log(this.booked_tasks)
   }
 
   onKeyTaskname(value: string){
