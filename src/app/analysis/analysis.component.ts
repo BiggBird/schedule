@@ -58,12 +58,12 @@ export class AnalysisComponent implements OnInit {
     this.chart_info.barChartLabels = task_type_labels;
     this.chart_info.barChartColors = [
                                       {
-                                        backgroundColor: 'rgba(103, 58, 183, .5)',
-                                        borderColor: 'rgba(103, 58, 183)',
-                                        pointBackgroundColor: 'rgb(103, 58, 183)',
+                                        backgroundColor: 'rgba(52,	175,	91, .5)',
+                                        borderColor: 'rgba(52,	175,	91)',
+                                        pointBackgroundColor: 'rgb(52,	175,	91)',
                                         pointBorderColor: '#fff',
                                         pointHoverBackgroundColor: '#fff',
-                                        pointHoverBorderColor: 'rgba(103, 58, 183, .8)'
+                                        pointHoverBorderColor: 'rgba(52,	175,	91, .8)'
                                       }
                                     ];
   }
