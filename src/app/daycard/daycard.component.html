@@ -16,7 +16,7 @@
     <tbody> 
       <tr *ngFor="let time_interval of time_intervals; let idx = index">
         <th scope="row" class=" px-0 mx-0" style="width:100px">{{idx}}:00</th> -->
-        <td *ngIf="!booked_tasks.has(idx)" rowspan="1" scope="col">
+        <td *ngIf="!booked_tasks.has(idx)" class=" p-1" rowspan="1" scope="col">
             <div class="dropdown no-arrow" >
                 <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -52,10 +52,13 @@
                 </div>
               </div>
         </td>
-        <td scope="col" *ngIf="booked_tasks.has(idx)" style="background-color:#34af5b; color: white;" rowspan="booked_tasks.get(idx)['duration']"> {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})
-          <div style="float:right;">
+        <td scope="col-auto " class=" p-1 d-flex " *ngIf="booked_tasks.has(idx)" style="background-color:#34af5b; color: white;" rowspan="booked_tasks.get(idx)['duration']"> 
+
+          {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})
+
+
           <span (click)="ondeleteclick(idx)" style="cursor: pointer;"> <i class="fa fa-trash"  aria-hidden="true"></i> </span>
-          </div>
+
         </td>
       <!-- </tr>
     <tbody>

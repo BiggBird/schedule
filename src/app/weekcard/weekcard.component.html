@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand navbar-dark" style="background-color: #32a858;" font-color="white">
+<nav class="navbar navbar-expand navbar-dark px-0 mx-0" style="background-color: #32a858;" font-color="white">
     <a class="navbar-brand px-3" href="index.html">Schedule Builder</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -45,14 +45,14 @@
             <th scope="col">Sunday</th>
           </tr>  
           <tr *ngFor="let time_interval of time_intervals; let idx = index">
-            <th scope="row" class=" px-0 mx-0" style="width:100px">{{idx}}:00</th>
+            <th scope="row" class=" p-0 mx-0" style="width:100px">{{idx}}:00</th>
             <!-- <td class=" px-0 mx-0" style="width:100px">{{idx}}:00</td> -->
     <!-- >>>>>>> 5561ef909f58c8bd1ae420efb8c119f893b613c3 -->
             <!-- <th *ngIf="idx > 11 || idx == 11" scope="row">{{time_interval+1}}:00</th> -->
             <!-- <th *ngIf="idx < 11" scope="row">{{time_interval+1}}:00 AM</th> -->
             <!-- <td *ngIf="!booked_tasks.has(idx)" rowspan="1"> -->
-            <td *ngFor="let day_of_week of days_of_week;" rowspan="1"> 
-                <app-daycard [day_of_week]="day_of_week" [idx]="idx" [weekly_booked_tasks]="weekly_booked_tasks"></app-daycard>
+            <td *ngFor="let day_of_week of days_of_week;" class=" p-0 "rowspan="1"> 
+                <app-daycard  [day_of_week]="day_of_week" [idx]="idx" [weekly_booked_tasks]="weekly_booked_tasks"></app-daycard>
             </td>
           </tr>
         <tbody>

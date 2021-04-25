@@ -15,13 +15,13 @@ export class DaycardComponent implements OnInit {
   days_of_week_names: string[] = ["Monday", "Tuesday", "Wednesday", "thursday", "Friday", "Saturday"] 
   
   time_intervals = Array.from({length: 24}, (v, k) => k%12);
-  task_type_labels = ["Sleep", "Play", "Extracurricular", "Academics"];
-  booked_task:BookedTask  = new BookedTask(1,1,"Peer Tutoring", this.task_type_labels[2]);
+  task_type_labels = ["Sleep", "Play", "Other", "Class"];
+  booked_task:BookedTask  = new BookedTask(1,1,"Tutoring", this.task_type_labels[2]);
 
   constructor() { }
 
   ngOnInit(): void {
-    let labels = ["Sleep", "Play", "Extracurricular", "Academics"]
+    let labels = ["Sleep", "Play", "Other", "Class"]
 
     // this.booked_tasks = this.weekly_booked_tasks[this.day_of_week];
     // console.log(this.day_of_week)
@@ -30,7 +30,7 @@ export class DaycardComponent implements OnInit {
     if (this.weekly_booked_tasks.get(this.day_of_week) == null) {
       this.weekly_booked_tasks.set(this.day_of_week, new Map([
         [0, new BookedTask(0,1,"Sleep",this.task_type_labels[0])],
-        [8, new BookedTask(8,2,"Maths",this.task_type_labels[1])]
+        [8, new BookedTask(8,2,"Math",this.task_type_labels[3])]
       ]));
     }
     this.booked_tasks = this.weekly_booked_tasks.get(this.day_of_week);
