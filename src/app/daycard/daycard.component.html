@@ -11,7 +11,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let time_interval of time_intervals; let idx = index">
+      <tr *ngFor="let time_interval of time_intervals; let idx = index; cur_dur = 1;">
         <th scope="row">{{idx}}:00</th>
         <!-- <th *ngIf="idx > 11 || idx == 11" scope="row">{{time_interval+1}}:00</th> -->
         <!-- <th *ngIf="idx < 11" scope="row">{{time_interval+1}}:00 AM</th> -->
@@ -47,10 +47,11 @@
                 </div>
               </div>
         </td>
-        <td *ngIf="booked_tasks.has(idx)" rowspan="booked_tasks.get(idx)['duration']"><button type="submit" class="btn btn-primary mb-2" (click)="ondeleteclick(idx)">-</button> {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})</td>
+        <td *ngIf="booked_tasks.has(idx); let cur_dur = booked_tasks.get(idx)['duration'];" rowspan="booked_tasks.get(idx)['duration']"><button type="submit" class="btn btn-primary mb-2" (click)="ondeleteclick(idx)">-</button> {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})</td>
         <!-- <ng-template #other_cell>
             <td>&nbsp;</td>
         </ng-template> -->
+        {{cur_dur}}
       </tr>
     <tbody>
 </table>
