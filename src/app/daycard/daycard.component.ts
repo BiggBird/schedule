@@ -21,7 +21,7 @@ export class DaycardComponent implements OnInit {
       [0, {
         "start": 0,
         "duration": 1,
-        "name": "Sleep Time zzzZ",
+        "name": "Sleep",
         "type": "Sleep"
       }],
       [8, {
