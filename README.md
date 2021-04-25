@@ -25,3 +25,17 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Types of Events
+sleep, play, extracurricular, academics
+
+## How to run
+npm install -g npm
+node -v
+npm -v
+npm install -g @angular/cli
+npm install ng2-charts
+
+Now inside of the schedule directory, compile and run the site on your local machine, using:
+
+ng serve --open
