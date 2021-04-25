@@ -23,18 +23,24 @@ export class WeekcardComponent implements OnInit {
 
     let monday_tasks = new Map([
       [2, new BookedTask(2,1,"Sleep",labels[0])],
-      [5, new BookedTask(5,2,"English",labels[3])],
+      [2, new BookedTask(2,1,"Sleep",labels[0])],
+      [6, new BookedTask(2,1,"Sleep",labels[0])],
+      [5, new BookedTask(2,1,"Sleep",labels[0])],
+      [4, new BookedTask(2,1,"Sleep",labels[0])],
+      [3, new BookedTask(2,1,"Sleep",labels[0])],
       [16, new BookedTask(2,1,"Gaming",labels[1])],
     ]);
 
     let tuesday_tasks = new Map([
       [5, new BookedTask(5,1,"Science",labels[3])],
-      [10, new BookedTask(10,2,"Math",labels[3])]
     ]);
 
     let wednesday_tasks = new Map([
       [8, new BookedTask(8,1,"Math II",labels[3])],
-      [14, new BookedTask(14,2,"Math Club",labels[2])]
+      [14, new BookedTask(14,2,"Math Club",labels[2])],
+      [15, new BookedTask(14,2,"Math Club",labels[2])],
+      [16, new BookedTask(14,2,"Math Club",labels[2])],
+      [17, new BookedTask(14,2,"Math Club",labels[2])]
     ]);
 
     let thursday_tasks = new Map([
@@ -51,6 +57,8 @@ export class WeekcardComponent implements OnInit {
     let sat_tasks = new Map([
       [0, new BookedTask(0,2,"Sleep",labels[0])],
       [16, new BookedTask(2,1,"Gaming",labels[1])],
+      [20, new BookedTask(2,1,"Gaming",labels[1])],
+      [21, new BookedTask(2,1,"Gaming",labels[1])],
     ]);
 
     let sun_tasks = new Map([
