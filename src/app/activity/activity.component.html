@@ -14,7 +14,7 @@
         <div class="d-flex flex-column text-center">
 
             <div class="form-group py-3">
-                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+                <!-- <form [formGroup]="profileForm"> -->
   
                     <label>
                       Activity Name:
@@ -27,13 +27,15 @@
                       <input type="text" formControlName="startTime">
                     </label>
 
-
-                  
+<!-- <ccf-child-input-component [profileForm]="profileForm"></ccf-child-input-component>
+                   -->
                     <label>
                         End Time:
                         <input type="text" formControlName="endTime">
                       </label>
-                </form>
+
+<!-- 
+                </form> -->
 
             <!-- <div class="row">
             <div class="col py-3">
@@ -57,7 +59,7 @@
             </div> -->
             </div>
 
-            <button type="submit" class="btn btn-primary btn-block btn-round" [disabled]="!profileForm.valid">Save</button>
+            <!-- <button type="submit" class="btn btn-primary btn-block btn-round" [disabled]="!profileForm.valid">Save</button> -->
 
         
 
@@ -66,5 +68,6 @@
     </div>
     </div>
 
+<!-- {{name.value}} -->
 </div>
 </div>

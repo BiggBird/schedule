@@ -12,12 +12,10 @@ export class DaysComponent implements OnInit {
   @ViewChild(ActivityComponent) days:any;
 
   constructor() {   
-
+    this.name = Object;
   }
-  name?: string;
 
-
-
+  name: Object;
 
   ngOnInit(): void { 
   }
