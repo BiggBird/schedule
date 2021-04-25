@@ -18,17 +18,18 @@ export class WeekcardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    let labels = ["Sleep", "Play", "Extracurricular", "Academics"]
+    let labels = ["Sleep", "Play", "Other", "Class"]
 
     let monday_tasks = new Map([
       [2, new BookedTask(2,1,"Sleep",labels[0])],
-      [5, new BookedTask(5,2,"English",labels[3])]
+      [5, new BookedTask(5,2,"English",labels[3])],
+      [16, new BookedTask(2,1,"Gaming",labels[1])],
     ]);
 
     let tuesday_tasks = new Map([
       [2, new BookedTask(2,1,"Sleep",labels[0])],
       [5, new BookedTask(5,1,"Science",labels[3])],
-      [10, new BookedTask(10,2,"Maths",labels[3])]
+      [10, new BookedTask(10,2,"Math",labels[3])]
     ]);
 
     let wednesday_tasks = new Map([
@@ -38,24 +39,48 @@ export class WeekcardComponent implements OnInit {
     ]);
 
     let thursday_tasks = new Map([
-      [2, new BookedTask(2,1,"Sleep",labels[0])],
-      [10, new BookedTask(10,1,"Gov",labels[2])],
-      [9, new BookedTask(9,2,"Odessey of the Mind",labels[2])]
+// <<<<<<< HEAD
+//       [2, new BookedTask(2,1,"Sleep",labels[0])],
+//       [10, new BookedTask(10,1,"Gov",labels[2])],
+//       [9, new BookedTask(9,2,"Odessey of the Mind",labels[2])]
+//     ]);
+
+//     let friday_tasks = new Map([
+//       [2, new BookedTask(2,1,"Sleep",labels[0])],
+//       [6, new BookedTask(6,1,"Eco",labels[3])],
+//       [10, new BookedTask(16,2,"Math Club",labels[3])],
+//       [16, new BookedTask(16,2,"Math Club",labels[1])]
+// =======
+      [10, new BookedTask(10,1,"Gov",labels[3])],
+      [20, new BookedTask(2,1,"Gaming",labels[1])],
     ]);
 
     let friday_tasks = new Map([
-      [2, new BookedTask(2,1,"Sleep",labels[0])],
-      [6, new BookedTask(6,1,"Eco",labels[3])],
-      [10, new BookedTask(16,2,"Math Club",labels[3])],
-      [16, new BookedTask(16,2,"Math Club",labels[1])]
+      [6, new BookedTask(6,1,"Econ",labels[3])],
+      [10, new BookedTask(16,2,"Math Club",labels[2])],
+      [16, new BookedTask(16,2,"Math Club",labels[2])]
+// >>>>>>> fb7635d2993f5edaf27cd5cf8ef4062e6c9c5a0c
     ]);
+
+    let sat_tasks = new Map([
+      [0, new BookedTask(0,2,"Sleep",labels[0])],
+      [16, new BookedTask(2,1,"Gaming",labels[1])],
+    ]);
+
+    let sun_tasks = new Map([
+      [0, new BookedTask(0,3,"Sleep",labels[0])],
+      [10, new BookedTask(10,2,"Math",labels[3])]
+    ]);
+
 
     this.weekly_booked_tasks = new Map ([
       [0, monday_tasks],
       [1, tuesday_tasks],
       [2, wednesday_tasks],
       [3, thursday_tasks],
-      [4, friday_tasks]
+      [4, friday_tasks],
+      [5, sat_tasks],
+      [6, sun_tasks]
     ])
 
     // this.setDataInLocalStorage();

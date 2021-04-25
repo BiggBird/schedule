@@ -20,7 +20,7 @@ export class AnalysisComponent implements OnInit {
   // }
 
   ngOnInit(): void {
-    let task_type_labels = ["Sleep", "Play", "Extracurricular", "Academics"];
+    let task_type_labels = ["Sleep", "Play", "Other", "Class"];
     let task_duration_data = [0,0,0,0];
 
     // this.weekly_booked_tasks_new = this.getDataFromLocalStorage();
@@ -39,8 +39,18 @@ export class AnalysisComponent implements OnInit {
     }
 
     this.chart_info.barChartOptions = {
-      scaleShowVerticalLines: false,
-      responsive: true
+      scaleShowVerticalLines: true,
+      responsive: true,
+      scales : {
+        yAxes: [{
+           ticks: {
+              steps : 1,
+              stepValue : 1,
+
+              min: 0
+            }
+        }]
+      }
     };
     this.chart_info.barChartType = 'bar'; //'horizontalBar';
     this.chart_info.barChartLegend = true;
