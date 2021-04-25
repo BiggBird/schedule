@@ -12,15 +12,15 @@ export class DaysComponent implements OnInit {
   @ViewChild(ActivityComponent) days:any;
 
   constructor() {   
-    this.name = Object;
+    // this.name = Object;
   }
 
-  name: Object;
+  // name: Object;
 
   ngOnInit(): void { 
   }
-  ngAfterViewInit() {
-    this.name = this.days.name
-  }
+  // ngAfterViewInit() {
+  //   // this.name = this.days.name
+  // }
 
 }
