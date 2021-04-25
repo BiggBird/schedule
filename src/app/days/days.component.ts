@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { ActivityComponent } from "../activity/activity.component";
 
 @Component({
   selector: 'app-days',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DaysComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(ActivityComponent) days:any;
 
-  ngOnInit(): void {
+  constructor() {   
+
+  }
+  name?: string;
+
+
+
+
+  ngOnInit(): void { 
+  }
+  ngAfterViewInit() {
+    this.name = this.days.name
   }
 
 }

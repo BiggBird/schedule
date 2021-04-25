@@ -1,0 +1,70 @@
+
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+    <div class="modal-header border-bottom-0">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">×</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <div class="form-title text-center">
+        <h4>Add Activity</h4>
+        </div>
+        <div class="d-flex flex-column text-center">
+
+            <div class="form-group py-3">
+                <form [formGroup]="profileForm" (ngSubmit)="onSubmit()">
+  
+                    <label>
+                      Activity Name:
+                      <input type="text" formControlName="name">
+                    </label>
+
+                  
+                    <label>
+                      Start Time:
+                      <input type="text" formControlName="startTime">
+                    </label>
+
+
+                  
+                    <label>
+                        End Time:
+                        <input type="text" formControlName="endTime">
+                      </label>
+                </form>
+
+            <!-- <div class="row">
+            <div class="col py-3">
+                <p>Start Time:</p>
+                <select id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="vw">VW</option>
+                    <option value="audi" selected>Audi</option>
+                </select>
+            </div>
+            <div class="col py-3">
+                <p>End Time:</p>
+                <select id="cars">
+                    <option value="volvo">Volvo</option>
+                    <option value="saab">Saab</option>
+                    <option value="vw">VW</option>
+                    <option value="audi" selected>Audi</option>
+                </select>
+            </div>
+            </div> -->
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block btn-round" [disabled]="!profileForm.valid">Save</button>
+
+        
+
+
+        </div>
+    </div>
+    </div>
+
+</div>
+</div>
