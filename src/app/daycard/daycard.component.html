@@ -51,7 +51,7 @@
                 </div>
               </div>
         </td>
-        <td *ngIf="booked_tasks.has(idx)" style="background-color:#89cff0;" rowspan="booked_tasks.get(idx)['duration']"> {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})
+        <td *ngIf="booked_tasks.has(idx)" style="background-color:#34af5b; color: white;" rowspan="booked_tasks.get(idx)['duration']"> {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})
           <div style="float:right;">
           <span (click)="ondeleteclick(idx)" style="cursor: pointer;"> <i class="fa fa-trash"  aria-hidden="true"></i> </span>
           </div>
