@@ -1,21 +1,22 @@
-<div class="container-fluid">
+<!-- <div class="container-fluid"> -->
 
-<table class="table">
+<!-- <table class="table">
     <thead>
       <tr>
-        <th scope="col">Time</th>
-        <th scope="col">{{day_of_week}}</th>
-        <!-- <th scope="col">Monday
-            <a type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#loginModal">+</a>
-        </th> -->
+        <th>Time</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+        <th>Sunday</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody> 
       <tr *ngFor="let time_interval of time_intervals; let idx = index">
-        <th scope="row" class=" px-0 mx-0" style="width:100px">{{idx}}:00</th>
-        <!-- <th *ngIf="idx > 11 || idx == 11" scope="row">{{time_interval+1}}:00</th> -->
-        <!-- <th *ngIf="idx < 11" scope="row">{{time_interval+1}}:00 AM</th> -->
-        <td *ngIf="!booked_tasks.has(idx)" rowspan="1">
+        <th scope="row" class=" px-0 mx-0" style="width:100px">{{idx}}:00</th> -->
+        <td *ngIf="!booked_tasks.has(idx)" rowspan="1" scope="col">
             <div class="dropdown no-arrow" >
                 <a href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                   <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
@@ -51,16 +52,13 @@
                 </div>
               </div>
         </td>
-        <td *ngIf="booked_tasks.has(idx)" style="background-color:#34af5b; color: white;" rowspan="booked_tasks.get(idx)['duration']"> {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})
+        <td scope="col" *ngIf="booked_tasks.has(idx)" style="background-color:#34af5b; color: white;" rowspan="booked_tasks.get(idx)['duration']"> {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})
           <div style="float:right;">
           <span (click)="ondeleteclick(idx)" style="cursor: pointer;"> <i class="fa fa-trash"  aria-hidden="true"></i> </span>
           </div>
         </td>
-        <!-- <ng-template #other_cell>
-            <td>&nbsp;</td>
-        </ng-template> -->
-      </tr>
+      <!-- </tr>
     <tbody>
-</table>
+</table> -->
 
-</div>
+<!-- </div> -->
