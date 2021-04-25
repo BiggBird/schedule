@@ -7,13 +7,15 @@ import { DaysComponent } from './days/days.component';
 import { HeaderComponent } from './header/header.component';
 import { ActivityComponent } from './activity/activity.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { DaycardComponent } from './daycard/daycard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DaysComponent,
     HeaderComponent,
-    ActivityComponent
+    ActivityComponent,
+    DaycardComponent
   ],
   imports: [
     BrowserModule,

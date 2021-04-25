@@ -1,0 +1,58 @@
+<div class="container">
+
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Time</th>
+        <th scope="col">{{day_of_week}}</th>
+        <!-- <th scope="col">Monday
+            <a type="button" class="btn btn-primary btn-round" data-toggle="modal" data-target="#loginModal">+</a>
+        </th> -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let time_interval of time_intervals; let idx = index">
+        <th scope="row">{{idx}}:00</th>
+        <!-- <th *ngIf="idx > 11 || idx == 11" scope="row">{{time_interval+1}}:00</th> -->
+        <!-- <th *ngIf="idx < 11" scope="row">{{time_interval+1}}:00 AM</th> -->
+        <td *ngIf="!booked_tasks.has(idx)" rowspan="1">
+            <div class="dropdown no-arrow">
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                </a>
+                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                    <form>
+                        <div class="form-row align-items-center">
+                          <div class="form-group col">
+                            <label for="duration">Duration</label>
+                            <input type="text" class="form-control" id="duration" #duration placeholder = "1" value="{{booked_task.duration}}" (keyup)="onKeyDuration(duration.value)">
+                          </div>
+                        </div>
+                        <div class="form-row">
+                          <div class="form-group col">
+                            <label for="taskname">Name</label>
+                            <input type="text" class="form-control" id="taskname" #taskname placeholder = "Science Club" value="{{booked_task.name}}" (keyup)="onKeyTaskname(taskname.value)">
+                          </div>
+                        </div>    
+                        <div class="form-row">
+                            <div class="form-group col">
+                              <label for="tasktype">Type</label>
+                              <input type="text" class="form-control" id="tasktype" #tasktype placeholder = "Club" value="{{booked_task.type}}" (keyup)="onKeyTasktype(tasktype.value)">
+                            </div>
+                          </div>  
+                              <div class="col-auto">
+                            <button type="submit" class="btn btn-primary mb-2" (click)="onclick(idx)">+</button>
+                        </div>
+                    </form>
+                </div>
+              </div>
+        </td>
+        <td *ngIf="booked_tasks.has(idx)" rowspan="booked_tasks.get(idx)['duration']"><button type="submit" class="btn btn-primary mb-2" (click)="ondeleteclick(idx)">-</button> {{booked_tasks.get(idx)["name"]}} ({{booked_tasks.get(idx)["type"]}})</td>
+        <!-- <ng-template #other_cell>
+            <td>&nbsp;</td>
+        </ng-template> -->
+      </tr>
+    <tbody>
+</table>
+
+</div>
